@@ -1,18 +1,15 @@
 class TableauTiled extends Tableau{
-    /**
-     * Ce tableau démontre comment se servir de Tiled, un petit logiciel qui permet de designer des levels et de les importer dans Phaser (entre autre).
-     *
-     * Ce qui suit est très fortement inspiré de ce tuto :
-     * https://stackabuse.com/phaser-3-and-tiled-building-a-platformer/
-     *
-     * Je vous conseille aussi ce tuto qui propose quelques alternatives (la manière dont son découpées certaines maisons notamment) :
-     * https://medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e6bbd6
-     */
+
+
+
+
+
+
     preload() {
         super.preload();
         // ------pour TILED-------------
         // nos images
-        this.load.image('tiles', 'assets/tilemaps/tableauTiledTileset.png');
+        this.load.image('tiles', 'assets/tilemaps/tilesheetFT.png');
         //les données du tableau qu'on a créé dans TILED
         this.load.tilemapTiledJSON('map', 'assets/tilemaps/tableauTiled.json');
 
@@ -23,6 +20,12 @@ class TableauTiled extends Tableau{
         //on y trouve notre étoiles et une tête de mort
         this.load.atlas('particles', 'assets/particles/particles.png', 'assets/particles/particles.json');
     }
+
+
+
+
+
+
     create() {
         super.create();
 
@@ -34,7 +37,7 @@ class TableauTiled extends Tableau{
         //notre map
         this.map = this.make.tilemap({ key: 'map' });
         //nos images qui vont avec la map
-        this.tileset = this.map.addTilesetImage('tableauTiledTileset', 'tiles');
+        this.tileset = this.map.addTilesetImage('tilesheetFT', 'tiles');
 
         //on agrandit le champ de la caméra du coup
         let largeurDuTableau=this.map.widthInPixels;
@@ -51,19 +54,8 @@ class TableauTiled extends Tableau{
         this.devant = this.map.createLayer('devant', this.tileset, 0, 0);
 
         //on définit les collisions, plusieurs méthodes existent:
+        this.solides.setCollisionByExclusion(-1, true);
 
-        // 1 La méthode que je préconise (il faut définir une propriété dans tiled pour que ça marche)
-        //permet de travailler sur un seul layer dans tiled et des définir les collisions en fonction des graphiques
-        //exemple ici https://medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e6bbd6
-        this.solides.setCollisionByProperty({ collides: true });
-        this.lave.setCollisionByProperty({ collides: true });
-
-        // 2 manière la plus simple (là où il y a des tiles ça collide et sinon non)
-        //this.solides.setCollisionByExclusion(-1, true);
-        //this.lave.setCollisionByExclusion(-1, true);
-
-        // 3 Permet d'utiliser l'éditeur de collision de Tiled...mais ne semble pas marcher pas avec le moteur de physique ARCADE, donc oubliez cette option :(
-        //this.map.setCollisionFromCollisionGroup(true,true,this.plateformesSimples);
 
         //----------les étoiles (objets) ---------------------
 
@@ -154,6 +146,10 @@ class TableauTiled extends Tableau{
 
         })
 
+
+
+
+
         //--------allez on se fait un peu la même en plus simple mais avec les étoiles----------
 
         let starsFxContainer=ici.add.container();
@@ -173,6 +169,10 @@ class TableauTiled extends Tableau{
             emmiter.startFollow(etoile);
             starsFxContainer.add(particles);
         });
+
+
+
+
 
 
 
@@ -198,6 +198,11 @@ class TableauTiled extends Tableau{
         });
 
 
+
+
+
+
+
         //---------- parallax ciel (rien de nouveau) -------------
 
         //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répète
@@ -221,6 +226,10 @@ class TableauTiled extends Tableau{
         this.sky2.setScrollFactor(0);//fait en sorte que le ciel ne suive pas la caméra
         this.sky2.blendMode=Phaser.BlendModes.ADD;
 
+
+
+
+
         //----------collisions---------------------
 
         //quoi collide avec quoi?
@@ -230,6 +239,10 @@ class TableauTiled extends Tableau{
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
         //quand on touche la lave, on meurt
         this.physics.add.collider(this.player, this.lave,this.playerDie,null,this);
+
+
+
+
 
         //--------- Z order -----------------------
 
@@ -250,6 +263,10 @@ class TableauTiled extends Tableau{
         this.sky.setDepth(z--);
 
     }
+
+
+
+
 
     /**
      * Permet d'activer, désactiver des éléments en fonction de leur visibilité dans l'écran ou non

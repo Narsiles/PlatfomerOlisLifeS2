@@ -10,23 +10,13 @@ let config = {
         default: 'arcade',
         arcade: {
             gravity: { y: 100*3 },
-            debug: false,
+            debug: 1,
         }
     },
     scene: [
         new Ui(),
 
         new TableauTiled("Tiled pour les gros gros levels"),
-        new Tableau00("Des étoiles"),
-        new Tableau01("Des plateformes"),
-        new Tableau02("Plein d'étoiles"),
-        new Tableau03("Des plateformes qui bougent"),
-        new Tableau04("Jouer avec les groupes"),
-        new Tableau05("Extend un tableau"),
-        new Tableau06("Un monstre!"),
-        new Tableau07("Un monstre volant!"),
-        new Tableau08("Un plateau qui sort du cadre"),
-        new TableauBirdSpriteJson("Un oiseau! "),
 
 
     ],

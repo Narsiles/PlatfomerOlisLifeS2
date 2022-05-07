@@ -14,8 +14,6 @@ let config = {
         }
     },
     scene: [
-        new Ui(),
-
         new TableauTiled("Tiled pour les gros gros levels"),
 
 

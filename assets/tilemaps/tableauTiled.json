@@ -70,6 +70,73 @@
          "y":0
         }, 
         {
+         "color":"#ff0000",
+         "draworder":"topdown",
+         "id":9,
+         "name":"colliders",
+         "objects":[
+                {
+                 "height":32,
+                 "id":123,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":928,
+                 "x":0,
+                 "y":3040
+                }, 
+                {
+                 "height":272,
+                 "id":127,
+                 "name":"stick",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":928,
+                 "y":2784
+                }, 
+                {
+                 "height":32,
+                 "id":131,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":1120,
+                 "x":960,
+                 "y":2784
+                }, 
+                {
+                 "height":160,
+                 "id":134,
+                 "name":"stick",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":2080,
+                 "y":2656
+                }, 
+                {
+                 "height":24,
+                 "id":135,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":168,
+                 "x":2104,
+                 "y":2656
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "draworder":"topdown",
          "id":8,
          "name":"flyingMonsters",
@@ -80,11 +147,11 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":9,
- "nextobjectid":117,
+ "nextlayerid":10,
+ "nextobjectid":137,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.8.4",
+ "tiledversion":"1.8.2",
  "tileheight":32,
  "tilesets":[
         {

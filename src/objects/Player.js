@@ -1,9 +1,9 @@
 class Player{
     constructor(scene) {
-
+        console.log('player')
         this.scene = scene;
         this.cameras = scene;
-        this.player = this.scene.physics.add.sprite(50, 600, 'attack').setOrigin(0, 0);
+        this.player = this.scene.physics.add.sprite(50, 2900, 'attack').setOrigin(0, 0);
         this.player.body.setSize(50, 112);
 
         this.d = 1;
@@ -12,16 +12,29 @@ class Player{
         this.shiftDown=false;
         this.qDown=false;
         this.dDown=false;
+        this.zDown=false;
+        this.sDown=false;
         this.lock=false;
+        this.grimpe=false;
         this.animation();
         this.initKeyboardQWERTY();
         this.direction='right';
         this.initKeyboard();
 
         this.scene.input.on('pointerdown', (pointer)=> {
+            if (pointer.leftButtonDown()){
             new BouleDeFeu(this.scene,pointer.worldX,pointer.worldY);
-            console.log(pointer.world)
+
+            }
         });
+
+        this.scene.input.on('pointerdown', (pointer)=> {
+            if (pointer.rightButtonDown()){
+                this.BouleHerbe = new Bouleherbe(this.scene,pointer.worldX,pointer.worldY);
+                console.log("Pute")
+            }
+        });
+
     }
 
     animation(){
@@ -99,6 +112,12 @@ class Player{
                 case Phaser.Input.Keyboard.KeyCodes.SHIFT:
                     me.shiftDown=true;
                     break;
+                case Phaser.Input.Keyboard.KeyCodes.Z:
+                    me.zDown=true;
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.S:
+                    me.sDown=true;
+                    break;
                 case Phaser.Input.Keyboard.KeyCodes.D:
                     me.dDown=true;
                     break;
@@ -115,6 +134,12 @@ class Player{
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.SHIFT:
                     me.shiftDown=false;
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.Z:
+                    me.zDown=false;
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.S:
+                    me.sDown=false;
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.D:
                     me.dDown=false;
@@ -140,6 +165,7 @@ class Player{
 
 
     //TOUTES LES FONCTIONS JUSQU'A **MOVE** CONCERNENT LES DEPLACEMENTS !
+
 
     //SAUT
     jump() {
@@ -216,6 +242,7 @@ class Player{
     //CETTE FONCTION INITIALISE TOUS LES DEPLACEMENTS
     move() {
 
+
         if (this.spaceDown && this.player.body.onFloor()) {
             this.jump();
 
@@ -228,8 +255,12 @@ class Player{
         if (this.dDown && this.shiftDown){
             this.dashR();
         }
-        if (this.leftMouseDown){
-            this.leftMouseDown=false;
+        if(this.zDown === true && this.grimpe === true){
+           this.player.setVelocityY(-200);
+        }
+
+        if(this.sDown === true && this.grimpe === true){
+            this.player.setVelocityY(200);
         }
 
         switch (true) {

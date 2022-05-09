@@ -23,12 +23,13 @@ class Tableau extends Phaser.Scene{
             { frameWidth: 32, frameHeight: 48  }
         );
         this.load.image('BdF', 'assets/BouleDeFeuu.png');
+        this.load.image('BdH', 'assets/gege.png');
     }
     create(){
         Tableau.current=this;
-        this.isMobile=this.game.device.os.android || this.game.device.os.iOS;
-        this.sys.scene.scale.lockOrientation("landscape")
-        console.log("On est sur "+this.constructor.name+" / "+this.scene.key);
+
+        this.input.mouse.disableContextMenu();
+
         /**
          * Le ciel en fond
          * @type {Phaser.GameObjects.Image}
@@ -36,12 +37,13 @@ class Tableau extends Phaser.Scene{
         this.sky=this.add.image(0, 0, 'sky').setOrigin(0,0);
         this.sky.displayWidth=14*64;
         this.sky.setScrollFactor(0,0);
+
+
         /**
          * Le joueur
          * @type {Player}
          */
-        this.player=new Player(this,0,0);
-        this.BouleDeFeu= new BouleDeFeu(this)
+        this.player=new Player(this);
         this.player.player.setMaxVelocity(800,800); //évite que le player quand il tombe ne traverse des plateformes
         this.blood=this.add.sprite(this.sys.canvas.width/2,this.sys.canvas.height/2,"blood")
         this.blood.displayWidth=64;
@@ -52,6 +54,7 @@ class Tableau extends Phaser.Scene{
     update(){
         super.update();
         this.player.move();
+        console.log(this.player.zDown);
     }
 
     /**

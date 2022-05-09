@@ -1,10 +1,5 @@
 class TableauTiled extends Tableau{
 
-
-
-
-
-
     preload() {
         super.preload();
         // ------pour TILED-------------
@@ -27,6 +22,7 @@ class TableauTiled extends Tableau{
         //on en aura besoin...
         let ici=this;
 
+        console.log('Chatte')
         //--------chargement de la tile map & configuration de la scène-----------------------
 
         //notre map
@@ -48,13 +44,23 @@ class TableauTiled extends Tableau{
         this.derriere = this.map.createLayer('derriere', this.tileset, 0, 0);
         this.devant = this.map.createLayer('devant', this.tileset, 0, 0);
 
-        //on définit les collisions, plusieurs méthodes existent:
-        this.solides.setCollisionByExclusion(-1, true);
+        //SA COLLIDE OU QUOI
+        this.colliders = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        const colliderLayer = this.map.getObjectLayer('colliders')
+        colliderLayer.objects.forEach(objData=> {
+            const {x = 0, y = 0, width = 0, height = 0} = objData
+            let colliders = this.add.rectangle(x, y, width, height).setOrigin(0, 0)
+            if(objData.name==='stick') {
+                colliders.name=objData.name
+            };
+            colliders = this.physics.add.existing(colliders)
+            this.colliders.add(colliders)
+            this.physics.add.collider(colliders,this.player.player)
+        })
 
-        //----------collisions---------------------
-
-        //quoi collide avec quoi?
-        this.physics.add.collider(this.player.player, this.solides);
 
 
         //--------- Z order -----------------------

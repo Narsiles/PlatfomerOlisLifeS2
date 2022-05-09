@@ -7,7 +7,7 @@ class Bouleherbe{
         sprite.body.setMaxVelocityX(8000);
         sprite.body.setMaxVelocityX(8000);
         this.scene.physics.moveTo(sprite,x,y);
-        sprite.setVelocity(sprite.body.velocity.x*5,sprite.body.velocity.y*5)
+        sprite.setVelocity(sprite.body.velocity.x*10,sprite.body.velocity.y*10)
         this.scene.physics.add.collider(sprite, this.scene.colliders,this.destroy,null,this);
     }
 

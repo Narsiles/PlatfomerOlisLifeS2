@@ -15,7 +15,7 @@ class Player{
         this.zDown=false;
         this.sDown=false;
         this.lock=false;
-        this.grimpe=false;
+        this.player.grimpe=false;
         this.animation();
         this.initKeyboardQWERTY();
         this.direction='right';
@@ -255,11 +255,11 @@ class Player{
         if (this.dDown && this.shiftDown){
             this.dashR();
         }
-        if(this.zDown === true && this.grimpe === true){
+        if(this.zDown === true && this.player.grimpe === true){
            this.player.setVelocityY(-200);
         }
 
-        if(this.sDown === true && this.grimpe === true){
+        if(this.sDown === true && this.player.grimpe === true){
             this.player.setVelocityY(200);
         }
 

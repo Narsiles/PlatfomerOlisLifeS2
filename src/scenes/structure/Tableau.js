@@ -2,6 +2,7 @@
  * Toutes les fonctions propres à un tableau dans notre jeu.
  * Cette classe n'est pas à utiliser directement, elle doit être extend !
  */
+
 class Tableau extends Phaser.Scene{
     /**
      *
@@ -54,7 +55,9 @@ class Tableau extends Phaser.Scene{
     update(){
         super.update();
         this.player.move();
-        console.log(this.player.zDown);
+        this.player.player.grimpe=false
+
+
     }
 
     /**

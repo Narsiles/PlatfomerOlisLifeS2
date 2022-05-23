@@ -11,7 +11,6 @@ class TableauTiled extends Tableau{
         // -----et puis aussi-------------
         this.load.image('monster-fly', 'assets/monster-fly.png');
         this.load.image('night', 'assets/night.jpg');
-        //atlas de texture généré avec https://free-tex-packer.com/app/
         //on y trouve notre étoiles et une tête de mort
         this.load.atlas('particles', 'assets/particles/particles.png', 'assets/particles/particles.json');
     }

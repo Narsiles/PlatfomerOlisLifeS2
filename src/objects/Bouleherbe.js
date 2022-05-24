@@ -15,7 +15,7 @@ class Bouleherbe{
     destroy(sprite,collidersHit){
         console.log(collidersHit)
         if(collidersHit.name==='stick'){
-            this.colliders = this.scene.add.rectangle(collidersHit.x-50, collidersHit.y, collidersHit.width, collidersHit.height).setOrigin(0, 0)
+            this.colliders = this.scene.add.rectangle(collidersHit.x-25, collidersHit.y, collidersHit.width, collidersHit.height).setOrigin(0, 0)
             this.colliders = this.scene.physics.add.existing(this.colliders)
             this.scene.colliders.add(this.colliders)
             this.scene.physics.add.overlap(this.colliders,this.scene.player.player,this.grimpe,null,this)

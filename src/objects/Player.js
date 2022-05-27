@@ -4,7 +4,8 @@ class Player{
         this.scene = scene;
         this.cameras = scene;
         this.player = this.scene.physics.add.sprite(50, 2900, 'attack').setOrigin(0, 0);
-        this.player.body.setSize(50, 112);
+        this.player.body.setSize(65, 85);
+        this.player.body.setOffset(0,0);
 
         this.d = 1;
         this.lockDash=0;
@@ -24,7 +25,6 @@ class Player{
         this.scene.input.on('pointerdown', (pointer)=> {
             if (pointer.leftButtonDown()){
             new BouleDeFeu(this.scene,pointer.worldX,pointer.worldY);
-
             }
         });
 
@@ -42,8 +42,16 @@ class Player{
         this.scene.anims.create({
             key: 'run',
             frameRate:6 ,
-            frames: this.scene.anims.generateFrameNames('player', {start: 0, end: 5, prefix: 'AnimRun/Marche_',suffix:'.png'}),
+            frames: this.scene.anims.generateFrameNames('player', {start: 0, end: 5, prefix: 'Marche/Marche_',suffix:'.png'}),
         });
+
+        this.scene.anims.create({
+            key: 'saut',
+            frameRate:9 ,
+            frames: this.scene.anims.generateFrameNames('player', {start:1 , end:3 , prefix: 'Saut/Saut_',suffix:'.png'}),
+        });
+
+
 
     }
 
@@ -233,7 +241,7 @@ class Player{
 
         if (this.spaceDown && this.player.body.onFloor()) {
             this.jump();
-
+            this.player.play('saut', true)
             this.flag = false;
         }
 

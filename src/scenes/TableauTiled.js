@@ -38,10 +38,12 @@ class TableauTiled extends Tableau{
 
         //---- ajoute les plateformes simples ----------------------------
 
-        this.solides = this.map.createLayer('solides', this.tileset, 0, 0);
-        this.lave = this.map.createLayer('lave', this.tileset, 0, 0);
         this.derriere = this.map.createLayer('derriere', this.tileset, 0, 0);
-        this.devant = this.map.createLayer('devant', this.tileset, 0, 0);
+        this.Bleu = this.map.createLayer('Bleu', this.tileset, 0, 0);
+        this.Violet = this.map.createLayer('Violet', this.tileset, 0, 0);
+        this.solides = this.map.createLayer('solides', this.tileset, 0, 0);
+
+
 
         //SA COLLIDE OU QUOI
         this.colliders = this.physics.add.group({

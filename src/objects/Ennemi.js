@@ -6,7 +6,6 @@ class Ennemi {
         this.cameras = scene;
         this.sprite=this.scene.physics.add.sprite(this.scene.player.player.x,this.scene.player.player.y,'ennemy').setDisplaySize(50,112).setDepth(22)
         this.Animations()
-
         this.scene.physics.add.collider(this.sprite,this.scene.collide)
         this.projectil=false
     }

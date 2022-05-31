@@ -41,7 +41,7 @@ class TableauTiled extends Tableau{
         //this.cameras.main.zoom=0.1
 
         this.derriere=this.add.image(0, 0, 'derriere').setOrigin(0,0);
-        this.derriere.setScrollFactor(0.1,0);
+        this.derriere.setScrollFactor(0.05,0);
 
         //Perse Atmo fond
         this.avantFond=this.add.image(0, 0, 'avantFond').setOrigin(0,0);

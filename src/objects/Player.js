@@ -2,7 +2,7 @@ class Player{
     constructor(scene) {
         console.log('player')
         this.scene = scene;
-        this.cameras = scene;
+
         this.player = this.scene.physics.add.sprite(50, 2900, 'attack').setOrigin(0, 0);
         this.player.body.setSize(65, 85);
         this.player.body.setOffset(0,0);
@@ -165,14 +165,14 @@ class Player{
 
     //SAUT
     jump() {
-        this.player.setVelocityY(-450);
+        this.player.setVelocityY(-460);
         console.log('jump');
     }
 
     //DEPLACEMENT VERS LA DROITE
     moveRight() {
 
-        this.player.setVelocityX(300*this.d);
+        this.player.setVelocityX(250*this.d);
         this.player.setFlipX(false);
 
         if (this.player.body.onFloor()) {
@@ -199,7 +199,7 @@ class Player{
 
     //DEPLACEMENT VERS LA GAUCHE
     moveLeft() {
-        this.player.setVelocityX(-300*this.d);
+        this.player.setVelocityX(-250*this.d);
         this.player.setFlipX(true)
         if (this.player.body.onFloor()) {
             // this.player.play('walk', true)

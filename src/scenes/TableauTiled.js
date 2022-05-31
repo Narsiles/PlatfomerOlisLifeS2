@@ -2,15 +2,20 @@ class TableauTiled extends Tableau{
 
     preload() {
         super.preload();
+
+        // ------Pers Atmo-------------
+        this.load.image('avantBleu', 'assets/fond/AvantBleu.png');
+        this.load.image('avantFond', 'assets/fond/AvantFond.png');
+        this.load.image('avantViolet', 'assets/fond/AvantViolet.png');
+        this.load.image('derriere', 'assets/fond/derriere.png');
+
         // ------pour TILED-------------
         // nos images
         this.load.image('tiles', 'assets/tilemaps/tilesheetFT.png');
         //les données du tableau qu'on a créé dans TILED
         this.load.tilemapTiledJSON('map', 'assets/tilemaps/tableauTiled.json');
 
-        // -----et puis aussi-------------
-        this.load.image('monster-fly', 'assets/monster-fly.png');
-        this.load.image('night', 'assets/night.jpg');
+
         //on y trouve notre étoiles et une tête de mort
         this.load.atlas('particles', 'assets/particles/particles.png', 'assets/particles/particles.json');
     }
@@ -29,19 +34,53 @@ class TableauTiled extends Tableau{
         //nos images qui vont avec la map
         this.tileset = this.map.addTilesetImage('tilesheetFT', 'tiles');
 
+        this.cameras.main.setBounds(0,0,14400, 3200 );
+
+
+        //---- ajoute les plateformes simples ----------------------------
+        //this.cameras.main.zoom=0.1
+
+        this.derriere=this.add.image(0, 0, 'derriere').setOrigin(0,0);
+        this.derriere.setScrollFactor(0.1,0);
+
+        //Perse Atmo fond
+        this.avantFond=this.add.image(0, 0, 'avantFond').setOrigin(0,0);
+        this.avantFond.setScrollFactor(0,0);
+
+        this.bleu = this.map.createLayer('Bleu', this.tileset, 0, 0).setOrigin(0,0).setScrollFactor(0.5,1);
+
+        //Perse Atmo devant bleu
+        this.avantBleu=this.add.image(0, 0, 'avantBleu').setOrigin(0,0);
+        this.avantBleu.setScrollFactor(0,0);
+
+        this.violet = this.map.createLayer('Violet', this.tileset, 0, 0).setOrigin(0,0).setScrollFactor(0.8,1);
+
+        //Perse Atmo devant violet
+        this.avantViolet=this.add.image(0, 0, 'avantViolet').setOrigin(0,0);
+        this.avantViolet.setScrollFactor(0,0);
+
+        this.fleur = this.map.createLayer('Fleur', this.tileset, 0, 0);
+
+        /**
+         * Le joueur
+         * @type {Player}
+         */
+        this.player=new Player(this);
+        this.ennemi = new Ennemi(this);
+        this.player.player.setMaxVelocity(800,800); //évite que le player quand il tombe ne traverse des plateformes
+
+        //---- ajoute les plateformes simples ----------------------------
+
+        this.solides = this.map.createLayer('solides', this.tileset, 0, 0).setOrigin(0,0);
+        this.devant = this.map.createLayer('Devant', this.tileset, 0, 0).setOrigin(0,0);
+
+
+
         //on agrandit le champ de la caméra du coup
         let largeurDuTableau = this.map.widthInPixels;
         let hauteurDuTableau = this.map.heightInPixels;
         this.physics.world.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
-        this.cameras.main.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
-        this.cameras.main.startFollow(this.player.player, true, 1, 1);
-
-        //---- ajoute les plateformes simples ----------------------------
-
-        this.derriere = this.map.createLayer('derriere', this.tileset, 0, 0);
-        this.Bleu = this.map.createLayer('Bleu', this.tileset, 0, 0);
-        this.Violet = this.map.createLayer('Violet', this.tileset, 0, 0);
-        this.solides = this.map.createLayer('solides', this.tileset, 0, 0);
+        this.cameras.main.startFollow(this.player.player, true, )
 
 
 

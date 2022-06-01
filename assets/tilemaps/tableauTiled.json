@@ -406,23 +406,55 @@
          "y":0
         }, 
         {
-         "color":"#0000ff",
-         "draworder":"topdown",
-         "id":7,
-         "name":"Ennemies au sol",
-         "objects":[],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
          "color":"#fff238",
          "draworder":"topdown",
          "id":8,
-         "name":"EnnemieVolant",
-         "objects":[],
+         "name":"Ennemi",
+         "objects":[
+                {
+                 "height":48,
+                 "id":311,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":56,
+                 "x":80,
+                 "y":3000
+                }, 
+                {
+                 "height":72,
+                 "id":312,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":72,
+                 "x":528,
+                 "y":2944
+                }, 
+                {
+                 "height":40,
+                 "id":313,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":272,
+                 "y":2944
+                }, 
+                {
+                 "height":48,
+                 "id":314,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":104,
+                 "y":2848
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -430,10 +462,10 @@
          "y":0
         }],
  "nextlayerid":14,
- "nextobjectid":311,
+ "nextobjectid":315,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.7.2",
+ "tiledversion":"1.8.2",
  "tileheight":32,
  "tilesets":[
         {
@@ -451,6 +483,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.6",
+ "version":"1.8",
  "width":450
 }

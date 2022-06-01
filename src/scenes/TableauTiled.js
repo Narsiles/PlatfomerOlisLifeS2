@@ -66,8 +66,15 @@ class TableauTiled extends Tableau{
          * @type {Player}
          */
         this.player=new Player(this);
-        this.ennemi = new Ennemi(this);
         this.player.player.setMaxVelocity(800,800); //évite que le player quand il tombe ne traverse des plateformes
+
+        this.groupEnnemie=[]
+        this.map.getObjectLayer('Ennemi').objects.forEach((obj) => {
+            this.ennemi = new Ennemi(this,obj.x,obj.y)
+            this.groupEnnemie.push(this.ennemi)
+        })
+
+        this.groupEnnemie.push(new Ennemi(this,0,0))
 
         //---- ajoute les plateformes simples ----------------------------
 
@@ -109,7 +116,7 @@ class TableauTiled extends Tableau{
 
     update(){
         super.update();
-
+        this.groupEnnemie.forEach(Dragon => Dragon.update())
     }
 
 }

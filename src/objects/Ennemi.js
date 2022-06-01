@@ -1,16 +1,19 @@
 class Ennemi {
 
 
-    constructor(scene) {
+    constructor(scene,x,y) {
         this.scene = scene;
         this.cameras = scene;
-        this.sprite=this.scene.physics.add.sprite(this.scene.player.player.x,this.scene.player.player.y,'ennemy').setDisplaySize(50,112).setDepth(22)
-        this.Animations()
-        this.scene.physics.add.collider(this.sprite,this.scene.collide)
-        this.projectil=false
+        this.Animations();
+        this.sprite=this.scene.physics.add.sprite(x, y,'Idle','Dragon/dragon_1.png')
+        this.sprite.play('Idle', true)
+        this.scene.physics.add.collider(this.sprite,this.scene.collide);
+        this.projectil=false;
+        this.sprite.vivant=true;
+        this.sprite.body.setAllowGravity(false);
     }
     update(){
-        if(Phaser.Math.Distance.Between(this.scene.player.player.x,this.scene.player.player.y,this.sprite.x,this.sprite.y)<500){
+        if(Phaser.Math.Distance.Between(this.scene.player.player.x,this.scene.player.player.y,this.sprite.x,this.sprite.y)<500 && this.sprite.vivant===true){
             this.fire()
         }
     }
@@ -51,5 +54,11 @@ class Ennemi {
             frameRate: 120,
             repeat: -1
         });
+
+        //this.scene.anims.create({
+        //  key: 'Idle',
+        // frameRate:4 ,
+        // frames: this.scene.anims.generateFrameNames('Idle', {start: 0, end: 5, prefix: 'Dragon/dragon_',suffix:'.png'}),
+        // });
     }
 }

@@ -47,7 +47,7 @@ class Player{
 
         this.scene.anims.create({
             key: 'saut',
-            frameRate:9 ,
+            frameRate:6 ,
             frames: this.scene.anims.generateFrameNames('player', {start:1 , end:3 , prefix: 'Saut/Saut_',suffix:'.png'}),
         });
 
@@ -165,6 +165,8 @@ class Player{
 
     //SAUT
     jump() {
+        this.canJump = false;
+        this.player.play('saut',true)
         this.player.setVelocityY(-460);
         console.log('jump');
     }
@@ -238,10 +240,11 @@ class Player{
     //CETTE FONCTION INITIALISE TOUS LES DEPLACEMENTS
     move() {
 
-
-        if (this.spaceDown && this.player.body.onFloor()) {
+        if(this.player.body.onFloor()){
+            this.canJump=true
+        }
+        if (this.spaceDown && this.player.body.onFloor() && this.canJump) {
             this.jump();
-            this.player.play('saut', true)
             this.flag = false;
         }
 
@@ -261,14 +264,17 @@ class Player{
 
         switch (true) {
             case this.qDown:
-                this.player.play('run', true)
-
+                if(this.canJump === true){
+                    this.player.play('run', true)
+                }
                 this.moveLeft()
                 this.direction='left'
                 this.flagleft = false;
                 break;
             case this.dDown:
-                this.player.play('run', true)
+                if(this.canJump === true){
+                    this.player.play('run', true)
+                }
                 this.moveRight();
                 this.direction='right'
                 this.flagright = false;

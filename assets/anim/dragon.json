@@ -1,0 +1,159 @@
+{
+  "frames": {
+    "Dragon/dragon_0.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 114,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dragon/dragon_1.png": {
+      "frame": {
+        "x": 114,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 114,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dragon/dragon_2.png": {
+      "frame": {
+        "x": 228,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 114,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dragon/dragon_3.png": {
+      "frame": {
+        "x": 342,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 114,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dragon/dragon_4.png": {
+      "frame": {
+        "x": 456,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 114,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dragon/dragon_5.png": {
+      "frame": {
+        "x": 570,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 114,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 114,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "dragon.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 684,
+      "h": 83
+    },
+    "scale": 1
+  }
+}

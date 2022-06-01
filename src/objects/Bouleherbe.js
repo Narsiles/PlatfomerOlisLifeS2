@@ -19,7 +19,15 @@ class Bouleherbe{
             this.colliders = this.scene.physics.add.existing(this.colliders)
             this.scene.colliders.add(this.colliders)
             this.scene.physics.add.overlap(this.colliders,this.scene.player.player,this.grimpe,null,this)
+            this.liane=this.scene.sound.add('avecliane',{ loop: false });
+            this.liane.play();
+            this.liane.volume=0.1;
             console.log('stick')
+        }
+        else{
+            this.liane=this.scene.sound.add('sansliane',{ loop: false });
+            this.liane.play();
+            this.liane.volume=0.1;
         }
         sprite.destroy()
     }
@@ -28,6 +36,5 @@ class Bouleherbe{
         player.grimpe=true;
 
         }
-
 
 }

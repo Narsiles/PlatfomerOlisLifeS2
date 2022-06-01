@@ -8,7 +8,9 @@ class BouleDeFeu{
         sprite.body.setMaxVelocityX(8000);
         this.scene.physics.moveTo(sprite,x,y);
         sprite.setVelocity(sprite.body.velocity.x*10,sprite.body.velocity.y*10)
-        this.scene.physics.add.collider(sprite, this.scene.colliders,this.wowow,null,this);
+        this.scene.physics.add.collider(sprite, this.scene.colliders,this.wowow,null,this)
+
+
 
 
 
@@ -17,7 +19,9 @@ class BouleDeFeu{
                 sprite.destroy();
                 ennemi.destroy();
                 ennemi.vivant = false;
-                console.log("TAMERE")
+                this.mortdrag=this.scene.sound.add('mortdrag',{ loop: false });
+                this.mortdrag.play();
+                this.mortdrag.volume=0.1;
 
             }, null, this)}
 
@@ -26,6 +30,9 @@ class BouleDeFeu{
 
     wowow(sprite,solides){
         sprite.destroy();
+        this.impBDF=this.scene.sound.add('impactebdf',{ loop: false });
+        this.impBDF.play();
+        this.impBDF.volume=0.1;
     }
 
 }

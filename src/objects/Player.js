@@ -25,12 +25,18 @@ class Player{
         this.scene.input.on('pointerdown', (pointer)=> {
             if (pointer.leftButtonDown()){
             new BouleDeFeu(this.scene,pointer.worldX,pointer.worldY);
+                this.bdfson=this.scene.sound.add('bdfson',{ loop: false });
+                this.bdfson.play();
+                this.bdfson.volume=0.05;
             }
         });
 
         this.scene.input.on('pointerdown', (pointer)=> {
             if (pointer.rightButtonDown()){
                 this.BouleHerbe = new Bouleherbe(this.scene,pointer.worldX,pointer.worldY);
+                this.sort2=this.scene.sound.add('sort2',{ loop: false });
+                this.sort2.play();
+                this.sort2.volume=0.07;
                 console.log("Pute")
             }
         });
@@ -47,7 +53,7 @@ class Player{
 
         this.scene.anims.create({
             key: 'saut',
-            frameRate:6 ,
+            frameRate:8 ,
             frames: this.scene.anims.generateFrameNames('player', {start:1 , end:3 , prefix: 'Saut/Saut_',suffix:'.png'}),
         });
 
@@ -59,7 +65,10 @@ class Player{
     dashR(){
         if(this.dDown && this.shiftDown) {
             if (this.lockDash == 0) {
-                this.lockDash = 1
+                this.lockDash = 1;
+                this.dash=this.scene.sound.add('dash',{ loop: false });
+                this.dash.play();
+                this.dash.volume=0.02;
                 let me = this;
                 this.tween = this.scene.tweens.add({
                     targets: this,
@@ -67,9 +76,9 @@ class Player{
                     ease: 'Circ.easeInOut',
                     duration: 250,
                     onComplete: function () {
-                        me.d = 1
+                        me.d = 1;
                         me.shiftDown = false;
-                        me.lockDash = 0
+                        me.lockDash = 0;
                     }
                 });
             }
@@ -79,7 +88,10 @@ class Player{
     dashL() {
         if (this.qDown && this.shiftDown) {
             if (this.lockDash == 0) {
-                this.lockDash = 1
+                this.lockDash = 1;
+                this.dash=this.scene.sound.add('dash',{ loop: false });
+                this.dash.play();
+                this.dash.volume=0.02;
                 let me = this;
                 this.tween = this.scene.tweens.add({
                     targets: this,
@@ -87,9 +99,9 @@ class Player{
                     ease: 'Circ.easeInOut',
                     duration: 250,
                     onComplete: function () {
-                        me.d = 1
+                        me.d = 1;
                         me.shiftDown = false;
-                        me.lockDash = 0
+                        me.lockDash = 0;
                     }
                 });
             }
@@ -168,6 +180,9 @@ class Player{
         this.canJump = false;
         this.player.play('saut',true)
         this.player.setVelocityY(-460);
+        this.saut=this.scene.sound.add('saut',{ loop: false });
+        this.saut.play()
+        this.saut.volume=0.1
         console.log('jump');
     }
 
@@ -251,9 +266,10 @@ class Player{
         if (this.qDown && this.shiftDown){
             this.dashL();
         }
-        if (this.dDown && this.shiftDown){
+        if (this.dDown && this.shiftDown) {
             this.dashR();
         }
+
         if(this.zDown === true && this.player.grimpe === true){
            this.player.setVelocityY(-200);
         }

@@ -20,6 +20,9 @@ class Ennemi {
     fire(){
         if(this.projectil===false) {
             this.projectil = true
+            this.drake=this.scene.sound.add('atckDrake',{ loop: false });
+            this.drake.play();
+            this.drake.volume=0.1;
             this.boule = this.scene.physics.add.sprite(this.sprite.x, this.sprite.y, 'boule').play('boule').setSize(230, 230).setDisplaySize(300, 300)
             this.boule.body.setAllowGravity(false)
             this.scene.physics.moveTo(this.boule, this.scene.player.player.x,this.scene.player.player.y)

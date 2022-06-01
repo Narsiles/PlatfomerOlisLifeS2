@@ -16,6 +16,20 @@ class Tableau extends Phaser.Scene{
      * Par défaut on charge un fond et le player
      */
     preload(){
+        //Les sons
+        this.load.audio('music',['assets/son/musiqueJeu.wav']);
+        this.load.audio('ambiance',['assets/son/ambiance.wav']);
+        this.load.audio('saut',['assets/son/jump.wav']);
+        this.load.audio('dash',['assets/son/dash.wav']);
+        this.load.audio('bdfson',['assets/son/bouledefeu.wav']);
+        this.load.audio('impactebdf',['assets/son/impactBouledefeu.wav']);
+        this.load.audio('sort2',['assets/son/sort2.wav']);
+        this.load.audio('mortdrag',['assets/son/mortdragon.wav']);
+        this.load.audio('sansliane',['assets/son/sansliane.wav']);
+        this.load.audio('avecliane',['assets/son/avecliane.wav']);
+        this.load.audio('atckDrake',['assets/son/attaqueDrake.wav']);
+
+        //les images et anim
         this.load.image('sky', 'assets/fond/Fond.png');
         this.load.image('ennemy', 'assets/monster-violet.png');
         this.load.spritesheet('boule', 'assets/particles/Bouledefeu.png',{ frameWidth: 1024, frameHeight: 1024 });
@@ -28,6 +42,19 @@ class Tableau extends Phaser.Scene{
         Tableau.current=this;
 
         this.input.mouse.disableContextMenu();
+
+        //toutes les musiques
+
+        //Musique principale
+        this.bt=this.sound.add('music',{ loop: true });
+        this.bt.play()
+        this.bt.volume=0.4
+
+        //Son d'ambiance
+        this.amb=this.sound.add('ambiance',{ loop: true });
+        this.amb.play()
+        this.amb.volume=0.2
+
 
         /**
          * Le ciel en fond

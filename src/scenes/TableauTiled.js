@@ -47,12 +47,14 @@ class TableauTiled extends Tableau{
         this.avantFond=this.add.image(0, 0, 'avantFond').setOrigin(0,0);
         this.avantFond.setScrollFactor(0,0);
 
+        this.bleuFleur = this.map.createLayer('BleuFleur', this.tileset, 0, 0).setOrigin(0,0).setScrollFactor(0.5,1);
         this.bleu = this.map.createLayer('Bleu', this.tileset, 0, 0).setOrigin(0,0).setScrollFactor(0.5,1);
 
         //Perse Atmo devant bleu
-        this.avantBleu=this.add.image(0, 0, 'avantBleu').setOrigin(0,0);
+        this.avantBleu=this.add.image(0, 0, 'avantBleu').setOrigin(0,0).setAlpha(0.5);
         this.avantBleu.setScrollFactor(0,0);
 
+        this.violetFleur = this.map.createLayer('VioletFleur', this.tileset, 0, 0).setOrigin(0,0).setScrollFactor(0.8,1);
         this.violet = this.map.createLayer('Violet', this.tileset, 0, 0).setOrigin(0,0).setScrollFactor(0.8,1);
 
         //Perse Atmo devant violet

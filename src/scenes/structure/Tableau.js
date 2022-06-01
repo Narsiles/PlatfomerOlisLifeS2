@@ -9,7 +9,7 @@ class Tableau extends Phaser.Scene{
      * @param {String} key identifiant de la scène à jouer
      */
     constructor(key) {
-        super(key);
+        super('level');
     }
 
     /**

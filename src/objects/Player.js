@@ -180,6 +180,7 @@ class Player{
         this.canJump = false;
         this.player.play('saut',true)
         this.player.setVelocityY(-460);
+        //son
         this.saut=this.scene.sound.add('saut',{ loop: false });
         this.saut.play()
         this.saut.volume=0.1

@@ -58,10 +58,10 @@ class Ennemi {
             repeat: -1
         });
 
-        //this.scene.anims.create({
-        //  key: 'Idle',
-        // frameRate:4 ,
-        // frames: this.scene.anims.generateFrameNames('Idle', {start: 0, end: 5, prefix: 'Dragon/dragon_',suffix:'.png'}),
-        // });
+        this.scene.anims.create({
+          key: 'Idle',
+         frameRate:4 ,
+         frames: this.scene.anims.generateFrameNames('dragon', {start: 0, end: 5, prefix: 'Dragon/dragon_',suffix:'.png'}),
+         });
     }
 }

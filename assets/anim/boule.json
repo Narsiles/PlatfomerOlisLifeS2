@@ -1,0 +1,327 @@
+{
+  "frames": {
+    "Boule/feu_0.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/feu_1.png": {
+      "frame": {
+        "x": 438,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/feu_2.png": {
+      "frame": {
+        "x": 876,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/feu_3.png": {
+      "frame": {
+        "x": 1314,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/gel_0.png": {
+      "frame": {
+        "x": 0,
+        "y": 384,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/gel_1.png": {
+      "frame": {
+        "x": 0,
+        "y": 768,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/gel_2.png": {
+      "frame": {
+        "x": 0,
+        "y": 1152,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/gel_3.png": {
+      "frame": {
+        "x": 0,
+        "y": 1536,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/gel_4.png": {
+      "frame": {
+        "x": 438,
+        "y": 384,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/herbe_0.png": {
+      "frame": {
+        "x": 876,
+        "y": 384,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/herbe_1.png": {
+      "frame": {
+        "x": 1314,
+        "y": 384,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/herbe_2.png": {
+      "frame": {
+        "x": 438,
+        "y": 768,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Boule/herbe_3.png": {
+      "frame": {
+        "x": 438,
+        "y": 1152,
+        "w": 438,
+        "h": 384
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 438,
+        "h": 384
+      },
+      "sourceSize": {
+        "w": 438,
+        "h": 384
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "boule.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1752,
+      "h": 1920
+    },
+    "scale": 1
+  }
+}

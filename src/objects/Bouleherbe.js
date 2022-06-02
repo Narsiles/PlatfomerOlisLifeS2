@@ -3,12 +3,13 @@ class Bouleherbe{
 
     constructor(scene,x,y) {
         this.scene = scene;
-        const sprite = this.scene.physics.add.sprite(this.scene.player.player.x,this.scene.player.player.y,'BdH').setTexture('BdH').setDisplaySize(50,50).setDepth(2000);
+        this.Animations();
+        const sprite = this.scene.physics.add.sprite(this.scene.player.player.x,this.scene.player.player.y,'boule').play('bouleherbe').setSize(230, 230).setDisplaySize(40, 40);
         sprite.body.setAllowGravity(false);
         sprite.body.setMaxVelocityX(8000);
         sprite.body.setMaxVelocityX(8000);
         this.scene.physics.moveTo(sprite,x,y);
-        sprite.setVelocity(sprite.body.velocity.x*10,sprite.body.velocity.y*10)
+        sprite.setVelocity(sprite.body.velocity.x*8,sprite.body.velocity.y*8)
         this.scene.physics.add.collider(sprite, this.scene.colliders,this.destroy,null,this);
     }
 
@@ -34,7 +35,15 @@ class Bouleherbe{
 
     grimpe(collider,player){
         player.grimpe=true;
-
         }
+
+    Animations(){
+        this.scene.anims.create({
+            key: 'bouleherbe',
+            frameRate:8 ,
+            frames: this.scene.anims.generateFrameNames('boule', {start:0 , end:3 , prefix: 'Boule/herbe_',suffix:'.png'}),
+            repeat: -1
+        });
+    }
 
 }

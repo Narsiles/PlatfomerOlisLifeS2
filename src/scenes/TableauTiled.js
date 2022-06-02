@@ -26,6 +26,9 @@ class TableauTiled extends Tableau{
         //on en aura besoin...
         let ici = this;
 
+        this.currentSaveX = 0;
+        this.currentSaveY = 0;
+
         console.log('Chatte')
         //--------chargement de la tile map & configuration de la scène-----------------------
 
@@ -72,11 +75,10 @@ class TableauTiled extends Tableau{
 
         this.groupEnnemie=[]
         this.map.getObjectLayer('Ennemi').objects.forEach((obj) => {
-            this.ennemi = new Ennemi(this,obj.x,obj.y)
-            this.groupEnnemie.push(this.ennemi)
+            this.ennemi = new Ennemi(this,obj.x,obj.y);
+            this.groupEnnemie.push(this.ennemi);
         })
 
-        this.groupEnnemie.push(new Ennemi(this,0,0))
 
         //---- ajoute les plateformes simples ----------------------------
 
@@ -84,12 +86,33 @@ class TableauTiled extends Tableau{
         this.devant = this.map.createLayer('Devant', this.tileset, 0, 0).setOrigin(0,0);
 
 
+        //save
+        this.saves = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        this.map.getObjectLayer('Save').objects.forEach((save) => {
+            this.saves.create(save.x, save.y- save.height, 'kzkz').setOrigin(0);
+        });
+        this.physics.add.overlap(this.player.player, this.saves, this.sauvegarde, null, this);
+
+
+        //collectible
+        this.collect = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        this.map.getObjectLayer('Collectible').objects.forEach((collect) => {
+            this.collect.create(collect.x, collect.y- collect.height, 'cricri').setOrigin(0);
+        });
+        this.physics.add.overlap(this.player.player, this.collect, this.collectible, null, this);
+
 
         //on agrandit le champ de la caméra du coup
         let largeurDuTableau = this.map.widthInPixels;
         let hauteurDuTableau = this.map.heightInPixels;
         this.physics.world.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
-        this.cameras.main.startFollow(this.player.player, true, )
+        this.cameras.main.startFollow(this.player.player, true, );
 
 
 
@@ -103,22 +126,42 @@ class TableauTiled extends Tableau{
             const {x = 0, y = 0, width = 0, height = 0} = objData
             let colliders = this.add.rectangle(x, y, width, height).setOrigin(0, 0)
             if (objData.name === 'stick') {
-                colliders.name = objData.name
-            }
-            ;
-            colliders = this.physics.add.existing(colliders)
-            this.colliders.add(colliders)
-            this.physics.add.collider(colliders, this.player.player)
-            this.physics.add.collider(colliders, this.ennemi.sprite)
+                colliders.name = objData.name;
+            };
+            if (objData.name === 'die') {
+                colliders.name = objData.name;
+            };
+            colliders = this.physics.add.existing(colliders);
+            this.colliders.add(colliders);
+            this.physics.add.collider(colliders, this.player.player, this.death,null,this);
+            this.physics.add.collider(colliders, this.ennemi.sprite);
         })
-
 
     }
 
 
+    collectible(player, collect) {
+        collect.destroy();
+        player.collect += 10;
+    }
+
+    sauvegarde(player, saves) {
+        this.currentSaveX = player.x;
+        this.currentSaveY = player.y-10;
+        saves.body.enable = false;
+        //console.log(this.currentSaveX)
+    }
+
+    death(colliders,player){
+        if (colliders.name === 'die'){
+            player.x = this.currentSaveX + 40;
+            player.y = this.currentSaveY;
+        }
+    }
+
     update(){
         super.update();
-        this.groupEnnemie.forEach(Dragon => Dragon.update())
+        this.groupEnnemie.forEach(Dragon => Dragon.update());
     }
 
 }

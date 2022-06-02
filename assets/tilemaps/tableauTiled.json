@@ -101,18 +101,6 @@
          "y":0
         }, 
         {
-         "color":"#ffaaff",
-         "draworder":"topdown",
-         "id":10,
-         "name":"Boss",
-         "objects":[],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
          "color":"#ff0000",
          "draworder":"topdown",
          "id":9,
@@ -425,9 +413,153 @@
                  "width":17.3333333333333,
                  "x":-6.66666666666667,
                  "y":2220
+                }, 
+                {
+                 "height":8,
+                 "id":320,
+                 "name":"die",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":400,
+                 "x":3136,
+                 "y":3192
+                }, 
+                {
+                 "height":8,
+                 "id":321,
+                 "name":"die",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":744,
+                 "x":4776,
+                 "y":3192
+                }, 
+                {
+                 "height":24,
+                 "id":323,
+                 "name":"die",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":1496,
+                 "x":7712,
+                 "y":3192
                 }],
          "opacity":1,
          "tintcolor":"#ff1111",
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":16,
+         "name":"Save",
+         "objects":[
+                {
+                 "height":40,
+                 "id":326,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":544,
+                 "y":3080
+                }, 
+                {
+                 "height":64,
+                 "id":328,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":16,
+                 "y":3032
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "color":"#00ff00",
+         "draworder":"topdown",
+         "id":17,
+         "name":"Collectible",
+         "objects":[
+                {
+                 "height":24,
+                 "id":330,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":256,
+                 "y":3056
+                }, 
+                {
+                 "height":24,
+                 "id":335,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":456,
+                 "y":3096
+                }, 
+                {
+                 "height":16,
+                 "id":336,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":720,
+                 "y":3120
+                }, 
+                {
+                 "height":24,
+                 "id":337,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":840,
+                 "y":3104
+                }, 
+                {
+                 "height":24,
+                 "id":338,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":1056,
+                 "y":3112
+                }, 
+                {
+                 "height":32,
+                 "id":339,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1224,
+                 "y":3104
+                }],
+         "opacity":1,
          "type":"objectgroup",
          "visible":true,
          "x":0,
@@ -456,11 +588,11 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":16,
- "nextobjectid":315,
+ "nextlayerid":18,
+ "nextobjectid":340,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.7.2",
+ "tiledversion":"1.8.2",
  "tileheight":32,
  "tilesets":[
         {
@@ -478,6 +610,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.6",
+ "version":"1.8",
  "width":450
 }

@@ -6,8 +6,8 @@ class Start extends Phaser.Scene {
     preload(){
 
         this.load.image('MainScreen', 'assets/Start/Overview.png');
-        this.load.image('Play', 'assets/images/bouton_start.png');
-        this.load.image('Credits', 'assets/images/bouton_credits.png');
+        this.load.image('Play', 'assets/Start/Jouer.png');
+        this.load.image('Credits', 'assets/Start/Credit.png');
 
 
     }
@@ -15,13 +15,13 @@ class Start extends Phaser.Scene {
     create(){
         const menu = this.add.image(0, 0, 'MainScreen').setOrigin(0, 0);
 
-        const buttonStartSprite = this.add.image(940, 650, 'Play')
+        const buttonStartSprite = this.add.image(100, 250, 'Play')
             .setOrigin(0, 0)
             .setScale(1)
             .setAlpha(0.7);
 
 
-        const buttonCreditsSprite = this.add.image(230, 650, 'Credits')
+        const buttonCreditsSprite = this.add.image(100, 450, 'Credits')
             .setOrigin(0, 0)
             .setScale(1)
             .setAlpha(0.7);

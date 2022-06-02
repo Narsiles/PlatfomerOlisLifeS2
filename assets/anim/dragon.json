@@ -1,143 +1,143 @@
 {
   "frames": {
-    "Dragon/dragon_0.png": {
+    "Dragon/drag1.png": {
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "sourceSize": {
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Dragon/dragon_1.png": {
+    "Dragon/drag2.png": {
       "frame": {
-        "x": 114,
+        "x": 188,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "sourceSize": {
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Dragon/dragon_2.png": {
+    "Dragon/drag3.png": {
       "frame": {
-        "x": 228,
+        "x": 376,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "sourceSize": {
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Dragon/dragon_3.png": {
+    "Dragon/drag4.png": {
       "frame": {
-        "x": 342,
+        "x": 564,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "sourceSize": {
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Dragon/dragon_4.png": {
+    "Dragon/drag5.png": {
       "frame": {
-        "x": 456,
+        "x": 752,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "sourceSize": {
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Dragon/dragon_5.png": {
+    "Dragon/drag6.png": {
       "frame": {
-        "x": 570,
+        "x": 940,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "sourceSize": {
-        "w": 114,
-        "h": 83
+        "w": 188,
+        "h": 163
       },
       "pivot": {
         "x": 0.5,
@@ -151,8 +151,8 @@
     "image": "dragon.png",
     "format": "RGBA8888",
     "size": {
-      "w": 684,
-      "h": 83
+      "w": 1128,
+      "h": 163
     },
     "scale": 1
   }

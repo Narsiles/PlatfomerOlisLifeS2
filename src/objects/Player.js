@@ -2,7 +2,6 @@ class Player{
     constructor(scene) {
         console.log('player')
         this.scene = scene;
-
         this.player = this.scene.physics.add.sprite(50, 2900, 'attack').setOrigin(0, 0);
         this.player.body.setSize(65, 85);
         this.player.body.setOffset(0,0);
@@ -22,17 +21,28 @@ class Player{
         this.direction='right';
         this.initKeyboard();
 
+        this.player.collect = 0;
+        this.emitter=EventDispatcher.getInstance();
+        this.emitter.on('kill',()=>{
+            this.player.collect += 100;
+            console.log(this.player.collect);
+        },this)
+
+
+
+
         this.scene.input.on('pointerdown', (pointer)=> {
-            if (pointer.leftButtonDown()){
+            if (pointer.leftButtonDown() && this.player.grimpe === false){
             new BouleDeFeu(this.scene,pointer.worldX,pointer.worldY);
                 this.bdfson=this.scene.sound.add('bdfson',{ loop: false });
                 this.bdfson.play();
                 this.bdfson.volume=0.05;
+
             }
         });
 
         this.scene.input.on('pointerdown', (pointer)=> {
-            if (pointer.rightButtonDown()){
+            if (pointer.rightButtonDown() && this.player.grimpe === false){
                 this.BouleHerbe = new Bouleherbe(this.scene,pointer.worldX,pointer.worldY);
                 this.sort2=this.scene.sound.add('sort2',{ loop: false });
                 this.sort2.play();
@@ -56,6 +66,7 @@ class Player{
             frameRate:8 ,
             frames: this.scene.anims.generateFrameNames('player', {start:1 , end:3 , prefix: 'Saut/Saut_',suffix:'.png'}),
         });
+
 
 
 
@@ -168,9 +179,6 @@ class Player{
             }
         });
     }
-
-
-
 
     //TOUTES LES FONCTIONS JUSQU'A **MOVE** CONCERNENT LES DEPLACEMENTS !
 

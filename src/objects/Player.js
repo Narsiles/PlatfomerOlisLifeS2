@@ -1,6 +1,6 @@
 class Player{
     constructor(scene) {
-        console.log('player')
+        console.log('player');
         this.scene = scene;
         this.player = this.scene.physics.add.sprite(50, 2900, 'attack').setOrigin(0, 0);
         this.player.body.setSize(65, 85);
@@ -15,18 +15,20 @@ class Player{
         this.zDown=false;
         this.sDown=false;
         this.lock=false;
+        this.player.life=3;
         this.player.grimpe=false;
         this.animation();
         this.initKeyboardQWERTY();
         this.direction='right';
         this.initKeyboard();
-
-        this.player.collect = 0;
+        window.objet_fragment = this.player.collect;
+        window.objet_fragment = 0;
         this.emitter=EventDispatcher.getInstance();
         this.emitter.on('kill',()=>{
-            this.player.collect += 100;
+            window.objet_fragment += 100;
             console.log(this.player.collect);
         },this)
+        this.emitter.on("toucher",this.checklife,this)
 
 
 
@@ -72,6 +74,16 @@ class Player{
 
     }
 
+    checklife(){
+        if (this.player.life===0){
+            this.player.x=this.scene.currentSaveX + 40;
+            this.player.y=this.scene.currentSaveY;
+            this.player.life=5
+
+            this.emitter.emit("respawn")
+        }
+    }
+
     //ICI ON MET NOS RACCOURCIS !
     dashR(){
         if(this.dDown && this.shiftDown) {
@@ -79,7 +91,7 @@ class Player{
                 this.lockDash = 1;
                 this.dash=this.scene.sound.add('dash',{ loop: false });
                 this.dash.play();
-                this.dash.volume=0.02;
+                this.dash.volume=0.05;
                 let me = this;
                 this.tween = this.scene.tweens.add({
                     targets: this,
@@ -102,7 +114,7 @@ class Player{
                 this.lockDash = 1;
                 this.dash=this.scene.sound.add('dash',{ loop: false });
                 this.dash.play();
-                this.dash.volume=0.02;
+                this.dash.volume=0.05;
                 let me = this;
                 this.tween = this.scene.tweens.add({
                     targets: this,
@@ -191,7 +203,7 @@ class Player{
         //son
         this.saut=this.scene.sound.add('saut',{ loop: false });
         this.saut.play()
-        this.saut.volume=0.1
+        this.saut.volume=0.3
         console.log('jump');
     }
 

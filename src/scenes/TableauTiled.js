@@ -5,6 +5,7 @@ class TableauTiled extends Tableau{
 
         // ------Pers Atmo-------------
         this.load.image('avantBleu', 'assets/fond/AvantBleu.png');
+        this.load.image('avantFond2', 'assets/fond/AvantFond2.png');
         this.load.image('avantFond', 'assets/fond/AvantFond.png');
         this.load.image('avantViolet', 'assets/fond/AvantViolet.png');
         this.load.image('derriere', 'assets/fond/derriere.png');
@@ -39,7 +40,6 @@ class TableauTiled extends Tableau{
 
         this.cameras.main.setBounds(0,0,14400, 3200 );
 
-
         //---- ajoute les plateformes simples ----------------------------
         //this.cameras.main.zoom=0.1
 
@@ -47,6 +47,9 @@ class TableauTiled extends Tableau{
         this.derriere.setScrollFactor(0.05,0);
 
         //Perse Atmo fond
+        this.avantFond2=this.add.image(0, 0, 'avantFond2').setOrigin(0,0);
+        this.avantFond2.setScrollFactor(0,0);
+
         this.avantFond=this.add.image(0, 0, 'avantFond').setOrigin(0,0);
         this.avantFond.setScrollFactor(0,0);
 
@@ -54,7 +57,7 @@ class TableauTiled extends Tableau{
         this.bleu = this.map.createLayer('Bleu', this.tileset, 0, 0).setOrigin(0,0).setScrollFactor(0.5,1);
 
         //Perse Atmo devant bleu
-        this.avantBleu=this.add.image(0, 0, 'avantBleu').setOrigin(0,0).setAlpha(0.5);
+        this.avantBleu=this.add.image(0, 0, 'avantBleu').setOrigin(0,0);
         this.avantBleu.setScrollFactor(0,0);
 
         this.violetFleur = this.map.createLayer('VioletFleur', this.tileset, 0, 0).setOrigin(0,0).setScrollFactor(0.8,1);
@@ -137,12 +140,13 @@ class TableauTiled extends Tableau{
             this.physics.add.collider(colliders, this.ennemi.sprite);
         })
 
+        this.scene.launch('UI')
     }
 
 
     collectible(player, collect) {
         collect.destroy();
-        player.collect += 10;
+        window.objet_fragment += 25;
     }
 
     sauvegarde(player, saves) {

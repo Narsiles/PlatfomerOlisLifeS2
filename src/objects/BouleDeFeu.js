@@ -30,7 +30,7 @@ class BouleDeFeu{
         sprite.destroy();
         this.impBDF=this.scene.sound.add('impactebdf',{ loop: false });
         this.impBDF.play();
-        this.impBDF.volume=0.1;
+        this.impBDF.volume=0.05;
     }
 
     Animations(){

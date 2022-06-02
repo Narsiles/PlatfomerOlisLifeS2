@@ -48,12 +48,12 @@ class Tableau extends Phaser.Scene{
         //Musique principale
         this.bt=this.sound.add('music',{ loop: true });
         this.bt.play()
-        this.bt.volume=0.4
+        this.bt.volume=1
 
         //Son d'ambiance
         this.amb=this.sound.add('ambiance',{ loop: true });
         this.amb.play()
-        this.amb.volume=0.2
+        this.amb.volume=0.5
 
 
         /**

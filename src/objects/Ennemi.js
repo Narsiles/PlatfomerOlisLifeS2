@@ -14,6 +14,7 @@ class Ennemi {
         this.projectil=false;
         this.sprite.vivant=true;
         this.sprite.body.setAllowGravity(false);
+        this.emitter=EventDispatcher.getInstance()
     }
     update(){
         if(Phaser.Math.Distance.Between(this.scene.player.player.x,this.scene.player.player.y,this.sprite.x,this.sprite.y)<500 && this.sprite.vivant===true){
@@ -45,10 +46,10 @@ class Ennemi {
                 }, null, this);
 
                 this.scene.physics.add.collider(this.boule, this.scene.player.player, (boule, player) => {
+                    player.life-=1
                     boule.destroy()
-                    // player.body.enable=false
-                    // player.visible=false
                     life.destroy()
+                    this.emitter.emit("toucher")
                     this.projectil = false
                 }, null, this)
             })

@@ -5,7 +5,7 @@ class Ennemi {
         this.scene = scene;
         this.cameras = scene;
         this.Animations();
-        this.sprite=this.scene.physics.add.sprite(x, y,'Idle','Dragon/drag1.png')
+        this.sprite=this.scene.physics.add.sprite(x, y,'Idle','Dragon/drag3.png')
         this.sprite.play('Idle', true)
         this.sprite.setDisplaySize(150,150)
         this.sprite.body.setSize(80, 80);

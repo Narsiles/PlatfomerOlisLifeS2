@@ -3,8 +3,8 @@ class Player{
         console.log('player');
         this.scene = scene;
         this.player = this.scene.physics.add.sprite(50, 2900, 'attack').setOrigin(0, 0);
-        this.player.body.setSize(65, 85);
-        this.player.body.setOffset(0,0);
+        this.player.body.setSize(40, 95);
+        this.player.body.setOffset(14,10);
 
         this.d = 1;
         this.lockDash=0;
@@ -60,15 +60,20 @@ class Player{
         this.scene.anims.create({
             key: 'run',
             frameRate:6 ,
-            frames: this.scene.anims.generateFrameNames('player', {start: 0, end: 5, prefix: 'Marche/Marche_',suffix:'.png'}),
+            frames: this.scene.anims.generateFrameNames('player', {start: 0, end: 6, prefix: 'Marche/Marche_',suffix:'.png'}),
         });
 
         this.scene.anims.create({
             key: 'saut',
             frameRate:8 ,
-            frames: this.scene.anims.generateFrameNames('player', {start:1 , end:3 , prefix: 'Saut/Saut_',suffix:'.png'}),
+            frames: this.scene.anims.generateFrameNames('player', {start:0 , end:2 , prefix: 'Saut/Saut_',suffix:'.png'}),
         });
 
+        this.scene.anims.create({
+            key: 'idle',
+            frameRate:8 ,
+            frames: this.scene.anims.generateFrameNames('player', {start:0 , end:5 , prefix: 'Idle/Idle_',suffix:'.png'}),
+        });
 
 
 
@@ -198,7 +203,7 @@ class Player{
     //SAUT
     jump() {
         this.canJump = false;
-        this.player.play('saut',true)
+        this.player.play('saut',true);
         this.player.setVelocityY(-460);
         //son
         this.saut=this.scene.sound.add('saut',{ loop: false });
@@ -265,13 +270,27 @@ class Player{
         this.player.setVelocityX(0);
 
         if (this.player.body.onFloor()) {
-            //this.player.play('idle',true)
+            this.player.play('idle',true)
         } else {
             this.player.setVelocityX(this.player.body.velocity.x * 0.6);
             this.player.setVelocityY(this.player.body.velocity.y * 0.6);
         }
     }
 
+
+    //CETTE FONCTION SERT A ARRETER LE JOUEUR QUAND ON VA VERS LA DROITE/GAUCHE. SINON ON COURS SANS S'ARRETER QUAND ON KEYUP.
+    stop() {
+        if (this.player.body.onFloor()) {
+            this.player.setVelocityX(0);
+            if(this.canJump) {
+                this.player.play('idle', true)
+            }
+
+        } else {
+            this.player.setVelocityX(this.player.body.velocity.x * 0.6);
+            this.player.setVelocityY(this.player.body.velocity.y * 0.6);
+        }
+    }
 
     //CETTE FONCTION INITIALISE TOUS LES DEPLACEMENTS
     move() {
@@ -318,7 +337,8 @@ class Player{
                 break;
             case this.player.body.onFloor():
                 this.stop();
-
+                break;
+            case this.player.body.onFloor(false):
                 break;
         }
         this.moveRightRelease();

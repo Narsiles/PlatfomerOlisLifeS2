@@ -27,6 +27,7 @@ class TableauTiled extends Tableau{
         //on en aura besoin...
         let ici = this;
 
+        this.Animation();
         this.currentSaveX = 0;
         this.currentSaveY = 0;
 
@@ -106,7 +107,7 @@ class TableauTiled extends Tableau{
             immovable: true
         });
         this.map.getObjectLayer('Collectible').objects.forEach((collect) => {
-            this.collect.create(collect.x, collect.y- collect.height, 'cricri').setOrigin(0);
+            this.collect.create(collect.x, collect.y- collect.height).play('Collectible').setOrigin(0);
         });
         this.physics.add.overlap(this.player.player, this.collect, this.collectible, null, this);
 
@@ -143,6 +144,15 @@ class TableauTiled extends Tableau{
         this.scene.launch('UI')
     }
 
+    Animation(){
+
+        this.anims.create({
+            key: 'Collectible',
+            frameRate:6 ,
+            frames: this.anims.generateFrameNames('Collectible', {start: 0, end: 3, prefix: 'Cristale/cricri',suffix:'.png'}),
+        });
+
+        }
 
     collectible(player, collect) {
         collect.destroy();

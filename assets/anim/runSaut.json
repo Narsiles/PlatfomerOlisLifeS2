@@ -4,20 +4,20 @@
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 91
+        "w": 70,
+        "h": 115
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 91
+        "w": 70,
+        "h": 115
       },
       "sourceSize": {
-        "w": 65,
-        "h": 91
+        "w": 70,
+        "h": 115
       },
       "pivot": {
         "x": 0.5,
@@ -27,21 +27,21 @@
     "Saut/Saut_1.png": {
       "frame": {
         "x": 0,
-        "y": 91,
-        "w": 65,
-        "h": 91
+        "y": 115,
+        "w": 70,
+        "h": 115
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 91
+        "w": 70,
+        "h": 115
       },
       "sourceSize": {
-        "w": 65,
-        "h": 91
+        "w": 70,
+        "h": 115
       },
       "pivot": {
         "x": 0.5,
@@ -51,45 +51,165 @@
     "Saut/Saut_2.png": {
       "frame": {
         "x": 0,
-        "y": 182,
-        "w": 65,
-        "h": 91
+        "y": 230,
+        "w": 70,
+        "h": 115
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 91
+        "w": 70,
+        "h": 115
       },
       "sourceSize": {
-        "w": 65,
-        "h": 91
+        "w": 70,
+        "h": 115
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Saut/Saut_3.png": {
+    "Idle/Idle_0.png": {
       "frame": {
         "x": 0,
-        "y": 273,
-        "w": 65,
-        "h": 91
+        "y": 345,
+        "w": 70,
+        "h": 113
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 91
+        "w": 70,
+        "h": 113
       },
       "sourceSize": {
-        "w": 65,
-        "h": 91
+        "w": 70,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Idle_1.png": {
+      "frame": {
+        "x": 0,
+        "y": 458,
+        "w": 70,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 70,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 70,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Idle_2.png": {
+      "frame": {
+        "x": 0,
+        "y": 571,
+        "w": 70,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 70,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 70,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Idle_3.png": {
+      "frame": {
+        "x": 0,
+        "y": 684,
+        "w": 70,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 70,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 70,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Idle_4.png": {
+      "frame": {
+        "x": 0,
+        "y": 797,
+        "w": 70,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 70,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 70,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Idle/Idle_5.png": {
+      "frame": {
+        "x": 0,
+        "y": 910,
+        "w": 70,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 70,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 70,
+        "h": 113
       },
       "pivot": {
         "x": 0.5,
@@ -99,21 +219,21 @@
     "Marche/Marche_0.png": {
       "frame": {
         "x": 0,
-        "y": 364,
-        "w": 65,
-        "h": 89
+        "y": 1023,
+        "w": 68,
+        "h": 110
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "sourceSize": {
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "pivot": {
         "x": 0.5,
@@ -123,21 +243,21 @@
     "Marche/Marche_1.png": {
       "frame": {
         "x": 0,
-        "y": 453,
-        "w": 65,
-        "h": 89
+        "y": 1133,
+        "w": 68,
+        "h": 110
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "sourceSize": {
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "pivot": {
         "x": 0.5,
@@ -147,21 +267,21 @@
     "Marche/Marche_2.png": {
       "frame": {
         "x": 0,
-        "y": 542,
-        "w": 65,
-        "h": 89
+        "y": 1243,
+        "w": 68,
+        "h": 110
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "sourceSize": {
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "pivot": {
         "x": 0.5,
@@ -171,21 +291,21 @@
     "Marche/Marche_3.png": {
       "frame": {
         "x": 0,
-        "y": 631,
-        "w": 65,
-        "h": 89
+        "y": 1353,
+        "w": 68,
+        "h": 110
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "sourceSize": {
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "pivot": {
         "x": 0.5,
@@ -195,21 +315,21 @@
     "Marche/Marche_4.png": {
       "frame": {
         "x": 0,
-        "y": 720,
-        "w": 65,
-        "h": 89
+        "y": 1463,
+        "w": 68,
+        "h": 110
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "sourceSize": {
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "pivot": {
         "x": 0.5,
@@ -219,21 +339,45 @@
     "Marche/Marche_5.png": {
       "frame": {
         "x": 0,
-        "y": 809,
-        "w": 65,
-        "h": 89
+        "y": 1573,
+        "w": 68,
+        "h": 110
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
       },
       "sourceSize": {
-        "w": 65,
-        "h": 89
+        "w": 68,
+        "h": 110
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Marche/Marche_6.png": {
+      "frame": {
+        "x": 0,
+        "y": 1683,
+        "w": 68,
+        "h": 110
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 68,
+        "h": 110
+      },
+      "sourceSize": {
+        "w": 68,
+        "h": 110
       },
       "pivot": {
         "x": 0.5,
@@ -247,8 +391,8 @@
     "image": "runSaut.png",
     "format": "RGBA8888",
     "size": {
-      "w": 65,
-      "h": 898
+      "w": 70,
+      "h": 1793
     },
     "scale": 1
   }

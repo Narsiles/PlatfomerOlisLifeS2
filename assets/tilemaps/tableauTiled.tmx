@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="450" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="258">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="450" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="258">
  <editorsettings>
   <export target="tableauTiled.json" format="json"/>
  </editorsettings>

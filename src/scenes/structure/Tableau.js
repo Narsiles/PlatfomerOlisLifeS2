@@ -35,6 +35,7 @@ class Tableau extends Phaser.Scene{
         this.load.atlas ( 'player', 'assets/anim/runSaut.png', 'assets/anim/runSaut.json');
         this.load.atlas('dragon', 'assets/anim/dragon.png', 'assets/anim/dragon.json');
         this.load.atlas('boule', 'assets/anim/boule.png', 'assets/anim/boule.json');
+        this.load.atlas('Collectible', 'assets/anim/Cristale.png', 'assets/anim/Cristale.json');
         this.load.image('BdF', 'assets/BouleDeFeuu.png');
         this.load.image('BdH', 'assets/gege.png');
     }

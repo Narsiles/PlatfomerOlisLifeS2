@@ -8,6 +8,8 @@ class UI extends Phaser.Scene {
         this.load.image('cricri', 'assets/ui/cricri.png');
         this.load.image('PdV', 'assets/ui/PdV.png');
         this.load.image('PdT', 'assets/ui/PdToutCourt.png');
+        this.load.image('Nop', 'assets/ui/DarkStar.png');
+        this.load.image('Yes', 'assets/ui/Star.png');
     }
 
     create(){
@@ -23,20 +25,33 @@ class UI extends Phaser.Scene {
             fontSize : 35
         })
             .setOrigin(0.5)
-            .setAlpha(1)
+            .setAlpha(1);
 
-        //Pv
-        this.emitter=EventDispatcher.getInstance()
-        this.groupeLife=[]
-        this.life=3
+
+        //PV
+        this.emitter=EventDispatcher.getInstance();
+        this.groupeLife=[];
+        this.life=3;
         for (let i =0;i<this.life;i++) {
             const life=this.add.image(40+i*40, 50, 'PdV')
             this.groupeLife.push(life)
-        }
-        this.emitter.on("toucher",this.Rlife,this)
+        };
+        this.emitter.on("toucher",this.Rlife,this);
 
-        this.emitter.on("respawn",this.Lrespawn,this)
+        this.emitter.on("respawn",this.Lrespawn,this);
+
+
+
+
+        //star
+        this.groupeStar=[]
+        this.starOK = 3;
+        for (let i =0;i<this.starOK;i++) {
+            const star=this.add.image(560+i*80, 70, 'Nop')
+            this.groupeStar.push(star)
+        }
     }
+
 
     Rlife(){
         if(this.life>=1) {
@@ -45,6 +60,7 @@ class UI extends Phaser.Scene {
 
         }
     }
+
     Lrespawn(){
 
         this.life=3
@@ -53,7 +69,9 @@ class UI extends Phaser.Scene {
         }
     }
 
+
     update(){
         this.count1.setText(Math.round(window.objet_fragment));
+
     }
 }

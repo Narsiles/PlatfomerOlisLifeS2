@@ -8,8 +8,10 @@ class UI extends Phaser.Scene {
         this.load.image('cricri', 'assets/ui/cricri.png');
         this.load.image('PdV', 'assets/ui/PdV.png');
         this.load.image('PdT', 'assets/ui/PdToutCourt.png');
-        this.load.image('Nop', 'assets/ui/DarkStar.png');
-        this.load.image('Yes', 'assets/ui/Star.png');
+        this.load.image('Nop', 'assets/ui/NoStar.png');
+        this.load.image('One', 'assets/ui/OneStar.png');
+        this.load.image('Two', 'assets/ui/TwoStar.png');
+        this.load.image('Three', 'assets/ui/ThreeStar.png');
     }
 
     create(){
@@ -41,17 +43,28 @@ class UI extends Phaser.Scene {
         this.emitter.on("respawn",this.Lrespawn,this);
 
 
-
-
         //star
-        this.groupeStar=[]
-        this.starOK = 3;
-        for (let i =0;i<this.starOK;i++) {
-            const star=this.add.image(560+i*80, 70, 'Nop')
-            this.groupeStar.push(star)
-        }
+        this.star = this.add.image(640, 70,'Nop');
+        this.emitter.on("kill",this.Star,this);
+        this.emitter.on("Point",this.Star,this);
     }
 
+
+    Star(){
+        if(objet_fragment === 25) {
+            this.oneStar = this.add.image(640, 70,'One');
+            this.star.setVisible(false);
+        }
+        else if(objet_fragment === 50) {
+            this.TwoStar =this.add.image(640, 70,'Two');
+            this.oneStar.setVisible(false);
+        }
+        else if(objet_fragment === 75) {
+            this.add.image(640, 70,'Three');
+            this.TwoStar.setVisible(false);
+        }
+
+    }
 
     Rlife(){
         if(this.life>=1) {
@@ -72,6 +85,5 @@ class UI extends Phaser.Scene {
 
     update(){
         this.count1.setText(Math.round(window.objet_fragment));
-
     }
 }

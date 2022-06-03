@@ -17,7 +17,7 @@ class BouleDeFeu{
             this.scene.physics.add.overlap(sprite, this.scene.groupEnnemie[i].sprite, (sprite, ennemi) =>  {
                 sprite.destroy();
                 ennemi.destroy();
-                this.emitter.emit('kill'),
+                this.emitter.emit('kill');
                 ennemi.vivant = false;
                 this.mortdrag=this.scene.sound.add('mortdrag',{ loop: false });
                 this.mortdrag.play();

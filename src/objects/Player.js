@@ -2,7 +2,7 @@ class Player{
     constructor(scene) {
         console.log('player');
         this.scene = scene;
-        this.player = this.scene.physics.add.sprite(50, 2900, 'attack').setOrigin(0, 0);
+        this.player = this.scene.physics.add.sprite(50, 2900, 'attack').setOrigin(0, 0).play('Idle');
         this.player.body.setSize(40, 95);
         this.player.body.setOffset(14,10);
 

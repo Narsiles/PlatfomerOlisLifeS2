@@ -9,6 +9,8 @@ class TableauTiled extends Tableau{
         this.load.image('avantFond', 'assets/fond/AvantFond.png');
         this.load.image('avantViolet', 'assets/fond/AvantViolet.png');
         this.load.image('derriere', 'assets/fond/derriere.png');
+        this.load.image('Save', 'assets/Save.png');
+        this.load.image('Lucioles1', 'assets/particles/ContCrist.png');
 
         // ------pour TILED-------------
         // nos images
@@ -26,6 +28,10 @@ class TableauTiled extends Tableau{
 
         //on en aura besoin...
         let ici = this;
+
+
+
+        this.emitter=EventDispatcher.getInstance();
 
         this.Animation();
         this.currentSaveX = 0;
@@ -70,6 +76,17 @@ class TableauTiled extends Tableau{
 
         this.fleur = this.map.createLayer('Fleur', this.tileset, 0, 0);
 
+
+        this.TourCrist = this.add.particles('Lucioles1');
+        this.TourCrist.createEmitter({
+            lifespan: 300,
+            speed: 150,
+            quantity: 200,
+            scale: { start: 0.2, end: 0 },
+            on: false
+        });
+
+
         /**
          * Le joueur
          * @type {Player}
@@ -82,6 +99,19 @@ class TableauTiled extends Tableau{
             this.ennemi = new Ennemi(this,obj.x,obj.y);
             this.groupEnnemie.push(this.ennemi);
         })
+        
+
+        //collectible
+        this.collect = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        this.map.getObjectLayer('Collectible').objects.forEach((collect) => {
+            this.collect.create(collect.x, collect.y- collect.height).play('Collectible').setOrigin(0);
+            this.physics.add.overlap(this.player.player, this.points, this.collectible, null, this);
+
+        });
+        this.physics.add.overlap(this.player.player, this.collect, this.collectible, null, this);
 
 
         //---- ajoute les plateformes simples ----------------------------
@@ -96,20 +126,11 @@ class TableauTiled extends Tableau{
             immovable: true
         });
         this.map.getObjectLayer('Save').objects.forEach((save) => {
-            this.saves.create(save.x, save.y- save.height, 'kzkz').setOrigin(0);
+            this.saves.create(save.x, save.y- save.height, 'Save').setOrigin(0).setVisible(false);
         });
         this.physics.add.overlap(this.player.player, this.saves, this.sauvegarde, null, this);
 
 
-        //collectible
-        this.collect = this.physics.add.group({
-            allowGravity: false,
-            immovable: true
-        });
-        this.map.getObjectLayer('Collectible').objects.forEach((collect) => {
-            this.collect.create(collect.x, collect.y- collect.height).play('Collectible').setOrigin(0);
-        });
-        this.physics.add.overlap(this.player.player, this.collect, this.collectible, null, this);
 
 
         //on agrandit le champ de la caméra du coup
@@ -144,6 +165,7 @@ class TableauTiled extends Tableau{
         this.scene.launch('UI')
     }
 
+
     Animation(){
 
         this.anims.create({
@@ -155,8 +177,11 @@ class TableauTiled extends Tableau{
         }
 
     collectible(player, collect) {
+
+        this.TourCrist.emitParticleAt(collect.x,collect.y);
         collect.destroy();
         window.objet_fragment += 25;
+        this.emitter.emit('Point');
     }
 
     sauvegarde(player, saves) {

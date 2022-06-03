@@ -25,7 +25,7 @@ class Player{
         window.objet_fragment = 0;
         this.emitter=EventDispatcher.getInstance();
         this.emitter.on('kill',()=>{
-            window.objet_fragment += 100;
+            window.objet_fragment += 50;
             console.log(this.player.collect);
         },this)
         this.emitter.on("toucher",this.checklife,this)

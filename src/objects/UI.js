@@ -51,15 +51,15 @@ class UI extends Phaser.Scene {
 
 
     Star(){
-        if(objet_fragment === 25) {
+        if(objet_fragment === 800) {
             this.oneStar = this.add.image(640, 70,'One');
             this.star.setVisible(false);
         }
-        else if(objet_fragment === 50) {
+        else if(objet_fragment === 3000) {
             this.TwoStar =this.add.image(640, 70,'Two');
             this.oneStar.setVisible(false);
         }
-        else if(objet_fragment === 75) {
+        else if(objet_fragment === 4000) {
             this.add.image(640, 70,'Three');
             this.TwoStar.setVisible(false);
         }

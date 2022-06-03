@@ -24,6 +24,7 @@ class Ennemi {
     fire(){
         if(this.projectil===false) {
             this.projectil = true
+
             this.drake = this.scene.sound.add('atckDrake', {loop: false});
             this.drake.play();
             this.drake.volume = 0.1;

@@ -17,6 +17,7 @@ let config = {
         new Start(),
         new TableauTiled("Tiled pour les gros gros levels"),
         new UI(),
+        new credits(),
     ],
     width: width,
     height: height,

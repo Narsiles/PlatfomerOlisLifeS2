@@ -11,6 +11,7 @@ class Bouleherbe{
         this.scene.physics.moveTo(sprite,x,y);
         sprite.setVelocity(sprite.body.velocity.x*8,sprite.body.velocity.y*8)
         this.scene.physics.add.collider(sprite, this.scene.colliders,this.destroy,null,this);
+
     }
 
     destroy(sprite,collidersHit){
@@ -22,7 +23,7 @@ class Bouleherbe{
             this.scene.physics.add.overlap(this.colliders,this.scene.player.player,this.grimpe,null,this)
             this.liane=this.scene.sound.add('avecliane',{ loop: false });
             this.liane.play();
-            this.liane.volume=0.1;
+            this.liane.volume=0.6;
             console.log('stick')
         }
         else{

@@ -30,8 +30,13 @@ class Tableau extends Phaser.Scene{
         this.load.audio('atckDrake',['assets/son/attaqueDrake.wav']);
 
         //les images et anim
+        this.load.image('Tuto1', 'assets/Tuto/tuto_anto.png');
+        this.load.image('Tuto2', 'assets/Tuto/tuto_anto1.png');
+        this.load.image('Tuto3', 'assets/Tuto/tuto_anto2.png');
+        this.load.image('Tuto4', 'assets/Tuto/tuto_anto3.png');
+
         this.load.image('sky', 'assets/fond/Fond.png');
-        this.load.image('ennemy', 'assets/monster-violet.png');
+        this.load.image('boom1', 'assets/particles/Boom1.png');
         this.load.atlas ( 'player', 'assets/anim/runSaut.png', 'assets/anim/runSaut.json');
         this.load.atlas('dragon', 'assets/anim/dragon.png', 'assets/anim/dragon.json');
         this.load.atlas('boule', 'assets/anim/boule.png', 'assets/anim/boule.json');

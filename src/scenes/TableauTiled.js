@@ -45,7 +45,7 @@ class TableauTiled extends Tableau{
         //nos images qui vont avec la map
         this.tileset = this.map.addTilesetImage('tilesheetFT', 'tiles');
 
-        this.cameras.main.setBounds(0,0,14400, 3200 );
+        this.cameras.main.setBounds(0,0,16500, 3200 );
 
         //---- ajoute les plateformes simples ----------------------------
         //this.cameras.main.zoom=0.1
@@ -77,6 +77,43 @@ class TableauTiled extends Tableau{
         this.fleur = this.map.createLayer('Fleur', this.tileset, 0, 0);
 
 
+        this.tuto1 = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        this.map.getObjectLayer('Tuto1').objects.forEach((Tuto1) => {
+            this.tuto1Sprite = this.tuto1.create(Tuto1.x , Tuto1.y - Tuto1.height, 'Tuto1').setOrigin(0);
+            this.tuto1Sprite.setScale(0.8)
+        });
+
+        this.tuto2 = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        this.map.getObjectLayer('Tuto2').objects.forEach((Tuto2) => {
+            this.tuto2Sprite = this.tuto2.create(Tuto2.x , Tuto2.y - Tuto2.height, 'Tuto2').setOrigin(0);
+            this.tuto2Sprite.setScale(0.8)
+        });
+
+        this.tuto3 = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        this.map.getObjectLayer('Tuto3').objects.forEach((Tuto3) => {
+            this.tuto3Sprite = this.tuto3.create(Tuto3.x , Tuto3.y - Tuto3.height, 'Tuto3').setOrigin(0);
+            this.tuto3Sprite.setScale(0.8)
+        });
+
+        this.tuto4 = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        this.map.getObjectLayer('Tuto4').objects.forEach((Tuto4) => {
+            this.tuto3Sprite = this.tuto3.create(Tuto4.x , Tuto4.y - Tuto4.height, 'Tuto4').setOrigin(0);
+            this.tuto3Sprite.setScale(0.8)
+        });
+
+
         this.TourCrist = this.add.particles('Lucioles1');
         this.TourCrist.createEmitter({
             lifespan: 300,
@@ -85,6 +122,7 @@ class TableauTiled extends Tableau{
             scale: { start: 0.2, end: 0 },
             on: false
         });
+
 
 
         /**
@@ -131,6 +169,16 @@ class TableauTiled extends Tableau{
         this.physics.add.overlap(this.player.player, this.saves, this.sauvegarde, null, this);
 
 
+        // WIN
+        this.End = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        this.map.getObjectLayer('Win').objects.forEach((End) => {
+            this.EndSprite = this.End.create(End.x , End.y , 'end').setOrigin(0).setVisible(false);
+        });
+        this.physics.add.overlap(this.player.player, this.EndSprite, this.Credits, null, this);
+
 
 
         //on agrandit le champ de la caméra du coup
@@ -165,6 +213,17 @@ class TableauTiled extends Tableau{
         this.scene.launch('UI')
     }
 
+    Credits(){
+        if (this.started){
+
+        } else {
+            this.scene.stop('UI')
+            this.scene.stop('level')
+            this.scene.stop('Start')
+            this.scene.start('credits')
+            this.started = true ;
+        }
+    }
 
     Animation(){
 
@@ -180,7 +239,7 @@ class TableauTiled extends Tableau{
 
         this.TourCrist.emitParticleAt(collect.x,collect.y);
         collect.destroy();
-        window.objet_fragment += 25;
+        window.objet_fragment += 50;
         this.emitter.emit('Point');
     }
 

@@ -11,10 +11,19 @@ class BouleDeFeu{
         this.scene.physics.moveTo(sprite,x,y);
         sprite.setVelocity(sprite.body.velocity.x*8,sprite.body.velocity.y*8)
         this.scene.physics.add.collider(sprite, this.scene.colliders,this.wowow,null,this)
+        this.Boom = this.scene.add.particles('boom1');
+        this.Boom.createEmitter({
+            lifespan: 300,
+            speed: 150,
+            quantity: 200,
+            scale: { start: 0.3, end: 0 },
+            on: false
+        });
 
 
         for(let i=0;i<=this.scene.groupEnnemie.length-1;i++) {
             this.scene.physics.add.overlap(sprite, this.scene.groupEnnemie[i].sprite, (sprite, ennemi) =>  {
+                this.Boom.emitParticleAt(sprite.x,sprite.y);
                 sprite.destroy();
                 ennemi.destroy();
                 this.emitter.emit('kill');
